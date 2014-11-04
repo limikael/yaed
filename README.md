@@ -4,6 +4,7 @@ yaed
 Yet Another Event Dispatcher
 
 * [Introduction](#introduction)
+* [Installation](#installation)
 * [Basic usage](#basic-usage)
 * [Multiple inheritance](#multiple-inheritance)
 * [Function name aliases](#function-name-aliases)
@@ -19,6 +20,39 @@ I created this one. I will outline how this implementation is used here below, a
 a motivation for these features.
 
 For reference documentation see: http://limikael.altervista.org/yaeddoc/
+
+Installation
+------------
+
+This is a NPM package, so it is intented to be used inside a NPM project. There are tutorials available on how to set up
+a NPM project, but a mini tutorial is here. First, create and cd to a folder for your project.
+
+````sh
+    mkdir myproject
+    cd myproject
+````
+
+The initialize this folder as a npm project:
+
+````sh
+    npm init
+````
+
+This will create a package.json file. Then, install yaed as a dependency:
+
+````sh
+    npm install --save-dev yaed
+````
+
+This will create a `node_modules` directory for the dependencies of your project and put yaed there. It will also
+add a reference to yaed in the package.json file, so that if you distribute your code, someone else can do:
+
+````sh
+    npm install
+````
+
+And install all dependencies for your project. For this reason, if you use a source repository such as git, 
+you should _not_ put the `node_modules` there. Instead, add node_modules to your `.gitignore` file.
 
 Basic usage
 -----------
