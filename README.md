@@ -4,6 +4,9 @@ yaed
 Yet Another Event Dispatcher
 
 * [Introduction](#introduction)
+* [Basic usage](#basic-usage)
+* [Multiple inheritance](#multiple-inheritance)
+* [Function name aliases](#function-name-aliases)
 
 Introduction
 ------------
