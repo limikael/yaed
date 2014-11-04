@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/limikael/yaed/issues"
   },
-  "homepage": "https://github.com/limikael/yaed"
+  "homepage": "https://github.com/limikael/yaed",
+  "devDependencies": {
+    "jasmine-node": "^2.0.0"
+  }
 }
