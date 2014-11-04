@@ -46,6 +46,7 @@ Multiple inheritance
 There are situations where the thing that should dispatch events is already something else.
 For example, if we have a button created in PIXI.js, then we might want this button to be
 able to dispatch click events, but we also want the button to be a PIXI.DisplayObjectContainer.
+
 Multiple inheritance to the rescue!
 
 ````javascript
@@ -61,7 +62,7 @@ Function name aliases
 
 I cannot decide if I like the HTML DOM and Actionscript names, i.e. `addEventListener`, 
 `removeEventListener` and `dispatchEvent` better, or the shorter style used by jquery, i.e.
-`on`, `off` and `trigger`. I'm leaning towards the latter, but I'm no sure.
+`on`, `off` and `trigger`. I'm leaning towards the latter, but I'm not sure.
 
 However, in order to have to avoid making a decision about this, I made it support both. The 
 funtions are aliases for each other, and work exactly the same way.
@@ -70,11 +71,14 @@ Event object vs. event name and parameters
 ------------------------------------------
 
 I have seen two slightly different ways how event parameters are passed to listening functions.
-Again, the first one is favoured by Actionscript and the second by jquery. They both have pros
-and cons, so I decided to support both.
+Again, the first one is favoured by Actionscript and the second by jquery.
 
 The first method uses an event object, and the type of the event we want to dispatch is
-specified in the `type` field of that object. I decided to support both methods, so the
+specified in the `type` field of that object. The second method accepts the event name
+as a string, and then the `dispatchEvent`/`trigger` behaves as a variadic function and
+passes further parameters along to the listening function.
+
+I decided to support both methods, so the
 `dispatchEvent`/`trigger` function will check the type of the first parameter to see if
 it is an object or a string.
 
