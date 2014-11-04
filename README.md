@@ -3,6 +3,8 @@ yaed
 
 Yet Another Event Dispatcher
 
+* [Introduction](#introduction)
+
 Introduction
 ------------
 
