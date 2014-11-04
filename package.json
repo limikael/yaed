@@ -1,0 +1,19 @@
+{
+  "name": "yaed",
+  "version": "1.0.0",
+  "description": "Yet Another Event Dispatcher",
+  "main": "src/EventDispatcher.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node --verbose test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limikael/yaed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limikael/yaed/issues"
+  },
+  "homepage": "https://github.com/limikael/yaed"
+}
