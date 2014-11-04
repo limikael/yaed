@@ -7,6 +7,8 @@ Yet Another Event Dispatcher
 * [Basic usage](#basic-usage)
 * [Multiple inheritance](#multiple-inheritance)
 * [Function name aliases](#function-name-aliases)
+* [Event object vs. event name and parameters](#event-object-vs-event-name-and-parameters)
+* [Associate scope with listeners](#associate-scope-with-listeners)
 
 Introduction
 ------------
