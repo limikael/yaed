@@ -11,7 +11,7 @@ implementations. It has some unique features which other implementations lack, w
 I created this one. I will outline how this implementation is used here below, as well as provide
 a motivation for these features.
 
-For reference documentation see:
+For reference documentation see: http://limikael.altervista.org/yaeddoc/
 
 Basic usage
 -----------

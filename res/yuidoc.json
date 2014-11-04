@@ -1,0 +1,9 @@
+{
+	"name": "yaed",
+	"description": "Yet Another Event Dispatcher",
+	"version": "0.1",
+	"options": {
+		"outdir": "doc",
+		"paths": "src"
+	}
+}
