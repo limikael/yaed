@@ -178,7 +178,7 @@ when calling the listeners. So we can do like this:
     src.off("event", obj.func, obj);
 ````
 
-For an expplanation why this is necesarry, first consider this code:
+For an explanation why this is necesarry, first consider this code:
 
 ````javascript
     var obj={};
