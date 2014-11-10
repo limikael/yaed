@@ -166,7 +166,19 @@ Associate scope with listeners
 
 Because of how scoping works in javascript, special care has to be taken when using callbacks. We cannot
 use a member function as a callback, and automatically expect this method to be able to access other
-members of the object. For example, consider this code:
+members of the object.
+
+Therefore, the `on` and `off` functions take one more parameter, which is the scope that will be used
+when calling the listeners. So we can do like this:
+
+````javascript
+    var src=new EventDispatcher();
+    src.on("event", obj.func, obj);
+    /* ... */
+    src.off("event", obj.func, obj);
+````
+
+For an expplanation why this is necesarry, first consider this code:
 
 ````javascript
     var obj={};
@@ -226,12 +238,4 @@ returned are two separate objects. What we could do is save the bound function i
 But this would bloat our precious variable namespace. Our code will probably be complex enough even
 without the system adding unneccesary complexity for us.
 
-Therefore, the `on` and `off` functions take one more parameter, which is the scope that will be used
-when calling the listeners. So we can do like this:
-
-````javascript
-    var src=new EventDispatcher();
-    src.on("event", obj.func, obj);
-    /* ... */
-    src.off("event", obj.func, obj);
-````
+That's where the extra `scope` parameter is useful.
