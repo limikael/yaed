@@ -89,7 +89,14 @@ EventDispatcher.prototype.dispatchEvent = function(event /* ... */ ) {
 
 	if (typeof event == "string") {
 		eventType = event;
-		listenerParams = Array.prototype.slice.call(arguments, 1);
+
+		if (arguments.length > 1)
+			listenerParams = Array.prototype.slice.call(arguments, 1);
+
+		else listenerParams = [{
+			type: eventType,
+			target: this
+		}];
 	} else {
 		eventType = event.type;
 		event.target = this;

@@ -72,5 +72,18 @@ describe("EventDispatcher", function() {
 		d.trigger("test");
 
 		expect(spy.calls.count()).toBe(1);
-	})
+	});
+
+	it("creates an event object if trigger is called with only a string", function() {
+		var d = new EventDispatcher();
+		var l = jasmine.createSpy();
+
+		d.on("test",l);
+		d.trigger("test");
+
+		expect(l.calls.argsFor(0)).toEqual([{
+			type: "test",
+			target: d
+		}]);
+	});
 });
