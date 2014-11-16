@@ -161,6 +161,35 @@ As mentioned before, there are pros and cons with both. The second style is shor
 the first style enables the event dispatcher to add a `target` field to the event object
 to indicate which object that sent the event.
 
+There is one special case, in order to try to combine the "best of both worlds". This is in the case where
+`trigger` is called with only one parameter, and where that parameter is a string. According to the spec above,
+the listeneing function should then be called without any parameters. For convenience, however, in this case
+an event object containing only `type` and `target` is constructed, and this object is sent as first parameter
+to the listening function. However, if you want to you can safely ignore this first parameter, of course.
+
+To clarify, this:
+
+````
+    observable.trigger("someEvent");
+````
+
+Will behave in the same way, as far as the listening function is concerned, as this:
+
+````
+    observable.trigger({
+        type: "someEvent"
+    });
+````
+
+That is, it will pass an event object to the listening function looking like this:
+
+````
+    {
+        type: "someEvent",
+        target: observable
+    }
+````
+
 Associate scope with listeners
 ------------------------------
 
