@@ -14,7 +14,7 @@ Yet Another Event Dispatcher
 Introduction
 ------------
 
-This is an implementation of an EventDispatcher in javascript. Admitably, it is one of many such
+This is an implementation of an EventDispatcher in javascript. Admittedly, it is one of many such
 implementations. It has some unique features which other implementations lack, which is why
 I created this one. I will outline how this implementation is used here below, as well as provide
 a motivation for these features.
