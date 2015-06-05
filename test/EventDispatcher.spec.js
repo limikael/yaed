@@ -86,4 +86,19 @@ describe("EventDispatcher", function() {
 			target: d
 		}]);
 	});
+
+	it ("is tolerant if an event handler removes itself",function() {
+		var d = new EventDispatcher();
+		var l=jasmine.createSpy();		
+
+		function evil() {
+			d.off("test",evil);
+		}
+
+		d.on("test",evil);
+		d.on("test",l);
+
+		d.trigger("test");
+		expect(l).toHaveBeenCalled();
+	})
 });
